@@ -9,4 +9,8 @@ use Waldekgraban\Scanner\Parser\Parser;
 echo 'test';
 $res = new Parser();
 return $res->getCaves();
-// var_dump($res->getCaves());
+
+
+// TODO
+// - cut guzzle result on line-part
+// - export data to pdf
