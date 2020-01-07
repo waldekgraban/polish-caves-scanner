@@ -1,2 +1,2 @@
-# polish_caves_scanner
+# Polish Caves Scanner
 Scan the Central Geological Database from the Polish Geological Institute
