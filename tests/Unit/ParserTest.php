@@ -14,28 +14,13 @@ class ParserTest extends TestCase
         $this->assertInstanceOf(Parser::class, $parser);
     }
 
-    public function testCanInitializeByStaticMethod()
-    {
-        $parser = Parser::make('test');
-
-        $this->assertInstanceOf(Parser::class, $parser);
-    }
-
-    public function testCanParseBaseFile()
-    {
-        $filename = __DIR__ . '/../Examples/entrance.svx';
-        $content  = file_get_contents($filename);
-        $parser   = Parser::make($content);
-
-        $surveys = $parser->parse();
-        dump($surveys);
-    }
-
     public function testCanGetCaveData()
     {
-        $parser   = Parser::make($content);
+        $client   = new \GuzzleHttp\Client();
+        $response = $client->request('GET', 'http://jaskiniepolski.pgi.gov.pl/Details/Information/1320');
 
-        $data = $parser->parse();
-        dump($data);
+        echo $response->getStatusCode();               // 200
+        echo $response->getHeaderLine('content-type'); // 'application/json; charset=utf8'
+        echo $response->getBody();                     // '{"id": 1420053, "name": "guzzle", ...}'
     }
 }

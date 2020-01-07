@@ -22,7 +22,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Waldekgraban\\Scanner\\Tests\\": "tests\\"
+            "Waldekgraban\\Scanner\\": "src/",
+            "Waldekgraban\\Scanner\\Tests\\": "tests/"
         }
     }
 }

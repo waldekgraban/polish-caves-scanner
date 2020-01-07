@@ -8,9 +8,9 @@ class Parser
 
     protected $lines;
 
-    final public function __construct($content)
+    final public function __construct()
     {
-        $this->content = $content;
+        // $this->content = $content;
     }
 
     public static function make($content)
