@@ -70,12 +70,10 @@ class Cave
         $literature,
         $study_authors,
         $editorial,
-        $lat,
-        $lon,
         $condition_by_year,
         $link_cbdg,
         $cbdg_number
-    ){
+    ) {
         $this->name                  = $name;
         $this->other_names           = $other_names;
         $this->inventory_number      = $inventory_number;
@@ -105,8 +103,6 @@ class Cave
         $this->literature            = $literature;
         $this->study_authors         = $study_authors;
         $this->editorial             = $editorial;
-        $this->lat                   = $lat;
-        $this->lon                   = $lon;
         $this->condition_by_year     = $condition_by_year;
         $this->link_cbdg             = $link_cbdg;
         $this->cbdg_number           = $cbdg_number;
@@ -343,169 +339,169 @@ class Cave
         return $this;
     }
 
-    public function getName($name)
+    public function getName()
     {
         return $this->name;
     }
 
-    public function getOtherNames($other_names)
+    public function getOtherNames()
     {
         return $this->other_names;
     }
 
-    public function getInventoryNumber($inventory_number)
+    public function getInventoryNumber()
     {
         return $this->inventory_number;
     }
 
-    public function getRegion($region)
+    public function getRegion()
     {
         return $this->region;
     }
 
-    public function getCoordinatesWgs84($coordinates_wgs84)
+    public function getCoordinatesWgs84()
     {
         return $this->coordinates_wgs84;
     }
 
-    public function getCommunity($community)
+    public function getCommunity()
     {
         return $this->community;
     }
 
-    public function getCounty($county)
+    public function getCounty()
     {
         return $this->county;
     }
 
-    public function getVoivodeship($voivodeship)
+    public function getVoivodeship()
     {
         return $this->voivodeship;
 
     }
 
-    public function getOwner($owner)
+    public function getOwner()
     {
         return $this->owner;
     }
 
-    public function getBasisOfProtection($basis_of_protection)
+    public function getBasisOfProtection()
     {
         return $this->basis_of_protection;
     }
 
-    public function getHoleExposure($hole_exposure)
+    public function getHoleExposure()
     {
         return $this->hole_exposure;
     }
 
-    public function getOtherHoles($other_holes)
+    public function getOtherHoles()
     {
         return $this->other_holes;
     }
 
-    public function getAbsoluteHeight($absolute_height)
+    public function getAbsoluteHeight()
     {
         return $this->absolute_height;
     }
 
-    public function getRelativeHeight($relative_height)
+    public function getRelativeHeight()
     {
         return $this->relative_height;
     }
 
-    public function getDepth($depth)
+    public function getDepth()
     {
         return $this->depth;
     }
 
-    public function getExceeds($exceeds)
+    public function getExceeds()
     {
         return $this->exceeds;
     }
 
-    public function getDrop($drop)
+    public function getDrop()
     {
         return $this->drop;
     }
 
-    public function getLength($length)
+    public function getLength()
     {
         return $this->length;
     }
 
-    public function getHorizontalExtension($horizontal_extension)
+    public function getHorizontalExtension()
     {
         return $this->horizontal_extension;
     }
 
-    public function getGeographicalLocation($geographical_location)
+    public function getGeographicalLocation()
     {
         return $this->geographical_location;
     }
 
-    public function getDescriptionOfAccess($description_of_access)
+    public function getDescriptionOfAccess()
     {
         return $this->description_of_access;
     }
 
-    public function getDescription($description)
+    public function getDescription()
     {
         return $this->description;
     }
 
-    public function getResearch_history($research_history)
+    public function getResearch_history()
     {
         return $this->research_history;
     }
 
-    public function getDocumentationHistory($documentation_history)
+    public function getDocumentationHistory()
     {
         return $this->documentation_history;
     }
 
-    public function getStatus($status)
+    public function getStatus()
     {
         return $this->status;
     }
 
-    public function getLiterature($literature)
+    public function getLiterature()
     {
         return $this->literature;
     }
 
-    public function getStudyAuthors($study_authors)
+    public function getStudyAuthors()
     {
         return $this->study_authors;
     }
 
-    public function getEditorial($editorial)
+    public function getEditorial()
     {
         return $this->editorial;
     }
 
-    public function getLat($lat)
+    // public function getLat()
+    // {
+    //     return $this->lat;
+    // }
+
+    // public function getLon()
+    // {
+    //     return $this->lon;
+    // }
+
+    public function getStatus()
     {
-        return $this->lat;
+        return $this->status;
+
     }
 
-    public function getLon($lon)
-    {
-        return $this->lon;
-    }
-
-    public function getConditionByYear($condition_by_year)
-    {
-        return $this->condition_by_year;
-
-    }
-
-    public function getLinkCbdg($link_cbdg)
+    public function getLinkCbdg()
     {
         return $this->link_cbdg;
     }
 
-    public function getCBDGNumber($cbdg_number)
+    public function getCBDGNumber()
     {
         return $this->cbdg_number;
     }

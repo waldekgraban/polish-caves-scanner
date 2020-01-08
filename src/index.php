@@ -6,11 +6,12 @@ require_once "../vendor/autoload.php";
 
 use Waldekgraban\Scanner\Parser\Parser;
 
-echo 'test';
-$res = new Parser();
-return $res->getCaves();
+$number = 1320;
+//$number = 20;     //test error number
 
+$res = new Parser($number);
+return $res->parse();
 
 // TODO
-// - cut guzzle result on line-part
-// - export data to pdf
+// - Chceck condition_by_year
+// - Put $number in loop
