@@ -490,10 +490,9 @@ class Cave
     //     return $this->lon;
     // }
 
-    public function getStatus()
+    public function getConditionByYear()
     {
-        return $this->status;
-
+        return $this->condition_by_year;
     }
 
     public function getLinkCbdg()
@@ -504,10 +503,5 @@ class Cave
     public function getCBDGNumber()
     {
         return $this->cbdg_number;
-    }
-
-    protected function linePattern()
-    {
-        //return '/^\*(?P<title>.+?)(?:\s+(?P<data>.+?))?(?:\s*\;\s*(?P<comment>.*))?$/';
     }
 }

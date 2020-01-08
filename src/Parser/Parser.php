@@ -80,7 +80,8 @@ class Parser
             $cave = new Cave($name, $other_names, $inventory_number, $region, $coordinates_wgs84, $community, $county, $voivodeship, $owner, $basis_of_protection, $hole_exposure, $other_holes, $absolute_height, $relative_height, $depth, $exceeds, $drop, $length, $horizontal_extension, $geographical_location, $description_of_access, $description, $research_history, $exploration_history, $documentation_history, $status, $literature, $study_authors, $editorial, $state, $link_cbdg, $cbdg_number
             );
 
-            return $this->saveCave($cave);
+            return $this->showCave($cave);
+            // return $this->saveCave($cave);
         } else {
             echo "http://jaskiniepolski.pgi.gov.pl/Details/Information/<b>" . $this->number . "</b> - puste<br>";
         }
@@ -96,6 +97,13 @@ class Parser
         $str = strtolower(substr($str, 0, 1)) . substr($str, 1);
 
         return $str;
+    }
+
+    public function showCave($cave)
+    {
+        echo "<pre>";
+            print_r($cave);
+        echo "</pre>";
     }
 
     public function saveCave($cave)
