@@ -15,11 +15,6 @@ class Parser
         $this->number = $number;
     }
 
-    public static function make($content)
-    {
-        return new static($content);
-    }
-
     public function scanCBDG($number)
     {
         $client   = new \GuzzleHttp\Client(['http_errors' => false]);
@@ -36,7 +31,7 @@ class Parser
         return new \DOMXPath($doc);
     }
 
-    public function splitScannedData($data)
+    public function processScannedData($data)
     {
         $xpath = $this->toDOM($data);
 
@@ -46,15 +41,15 @@ class Parser
         $cave = $this->createOrFailCave($values);
 
         if (!is_object($cave)) {
-                return $this->errorMsg($this->number);
+            return $this->errorMsg($this->number);
         } else {
             return $this->showCave($cave);
             // return $this->saveCave($cave);
         }
-
     }
 
-    public function createOrFailCave($values){
+    public function createOrFailCave($values)
+    {
 
         if ($values[0]->nodeValue) {
             $name                  = $this->getName($values[0]->nodeValue);
@@ -92,21 +87,22 @@ class Parser
             $cbdg_number           = $this->getCBDGNumber($this->number);
 
             $case = true;
-            $log = new Logger($this->number, $case);
+            $log  = new Logger($this->number, $case);
             $log->save();
 
             return $cave = new Cave($name, $other_names, $inventory_number, $region, $coordinates_wgs84, $community, $county, $voivodeship, $owner, $basis_of_protection, $hole_exposure, $other_holes, $absolute_height, $relative_height, $depth, $exceeds, $drop, $length, $horizontal_extension, $geographical_location, $description_of_access, $description, $research_history, $exploration_history, $documentation_history, $status, $literature, $study_authors, $editorial, $state, $link_cbdg, $cbdg_number
             );
         } else {
             $case = false;
-            $log = new Logger($this->number, $case);
+            $log  = new Logger($this->number, $case);
             $log->save();
 
             return false;
         }
     }
 
-    public function errorMsg($number){
+    public function errorMsg($number)
+    {
         echo "Object number " . $number . " in CBDG not found";
     }
 
@@ -125,7 +121,7 @@ class Parser
     public function showCave($cave)
     {
         echo "<pre>";
-            print_r($cave);
+        print_r($cave);
         echo "</pre>";
     }
 
@@ -336,6 +332,6 @@ class Parser
     {
         $data = $this->scanCBDG($this->number);
 
-        return $splitData = $this->splitScannedData($data);
+        return $splitData = $this->processScannedData($data);
     }
 }

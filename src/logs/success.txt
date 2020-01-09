@@ -8,3 +8,5 @@ http://jaskiniepolski.pgi.gov.pl/Details/Information/<b>1320</b><br>
 2020-01-09 11:45:42 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1320
 2020-01-09 11:52:43 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1320
 2020-01-09 11:54:12 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1320
+2020-01-09 12:01:00 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1320
+2020-01-09 12:09:38 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1320
