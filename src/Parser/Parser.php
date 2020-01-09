@@ -4,6 +4,7 @@ namespace Waldekgraban\Scanner\Parser;
 
 use Fpdf\Fpdf;
 use Waldekgraban\Scanner\Parser\Cave;
+use Waldekgraban\Scanner\Parser\Logger;
 
 class Parser
 {
@@ -42,6 +43,19 @@ class Parser
         $names  = $xpath->query("//table[@id='tableDetails1']/tr/td[1]");
         $values = $xpath->query("//table[@id='tableDetails1']/tr/td[2]");
 
+        $cave = $this->createOrFailCave($values);
+
+        if (!is_object($cave)) {
+                return $this->errorMsg($this->number);
+        } else {
+            return $this->showCave($cave);
+            // return $this->saveCave($cave);
+        }
+
+    }
+
+    public function createOrFailCave($values){
+
         if ($values[0]->nodeValue) {
             $name                  = $this->getName($values[0]->nodeValue);
             $other_names           = $this->getOtherNames($values[1]->nodeValue);
@@ -77,14 +91,23 @@ class Parser
             $link_cbdg             = $this->getLinkCBDG($this->number);
             $cbdg_number           = $this->getCBDGNumber($this->number);
 
-            $cave = new Cave($name, $other_names, $inventory_number, $region, $coordinates_wgs84, $community, $county, $voivodeship, $owner, $basis_of_protection, $hole_exposure, $other_holes, $absolute_height, $relative_height, $depth, $exceeds, $drop, $length, $horizontal_extension, $geographical_location, $description_of_access, $description, $research_history, $exploration_history, $documentation_history, $status, $literature, $study_authors, $editorial, $state, $link_cbdg, $cbdg_number
-            );
+            $case = true;
+            $log = new Logger($this->number, $case);
+            $log->save();
 
-            return $this->showCave($cave);
-            // return $this->saveCave($cave);
+            return $cave = new Cave($name, $other_names, $inventory_number, $region, $coordinates_wgs84, $community, $county, $voivodeship, $owner, $basis_of_protection, $hole_exposure, $other_holes, $absolute_height, $relative_height, $depth, $exceeds, $drop, $length, $horizontal_extension, $geographical_location, $description_of_access, $description, $research_history, $exploration_history, $documentation_history, $status, $literature, $study_authors, $editorial, $state, $link_cbdg, $cbdg_number
+            );
         } else {
-            echo "http://jaskiniepolski.pgi.gov.pl/Details/Information/<b>" . $this->number . "</b> - puste<br>";
+            $case = false;
+            $log = new Logger($this->number, $case);
+            $log->save();
+
+            return false;
         }
+    }
+
+    public function errorMsg($number){
+        echo "Object number " . $number . " in CBDG not found";
     }
 
     public function camelCase($str)
