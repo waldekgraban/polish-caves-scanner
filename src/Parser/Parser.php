@@ -2,9 +2,9 @@
 
 namespace Waldekgraban\Scanner\Parser;
 
-use Fpdf\Fpdf;
 use Waldekgraban\Scanner\Parser\Cave;
 use Waldekgraban\Scanner\Parser\Logger;
+use Waldekgraban\Scanner\Parser\PdfGenerator as Pdf;
 
 class Parser
 {
@@ -43,14 +43,13 @@ class Parser
         if (!is_object($cave)) {
             return $this->errorMsg($this->number);
         } else {
-            return $this->showCave($cave);
-            // return $this->saveCave($cave);
+            return $this->saveCave($cave);
+            // return $this->showCave($cave);
         }
     }
 
     public function createOrFailCave($values)
     {
-
         if ($values[0]->nodeValue) {
             $name                  = $this->getName($values[0]->nodeValue);
             $other_names           = $this->getOtherNames($values[1]->nodeValue);
@@ -106,18 +105,6 @@ class Parser
         echo "Object number " . $number . " in CBDG not found";
     }
 
-    public function camelCase($str)
-    {
-        $i   = ["-", "_"];
-        $str = preg_replace('/([a-z])([A-Z])/', "\\1 \\2", $str);
-        $str = preg_replace('@[^a-zA-Z0-9\-_ ]+@', '', $str);
-        $str = str_replace($i, ' ', $str);
-        $str = str_replace(' ', '', ucwords(strtolower($str)));
-        $str = strtolower(substr($str, 0, 1)) . substr($str, 1);
-
-        return $str;
-    }
-
     public function showCave($cave)
     {
         echo "<pre>";
@@ -127,43 +114,8 @@ class Parser
 
     public function saveCave($cave)
     {
-        $pdf = new FPDF();
-        $pdf->AddPage();
-        $pdf->SetAuthor('https://github.com/waldekgraban/polish_caves_scanner');
-        $pdf->SetTitle($cave->getName());
-        $pdf->SetFont('Arial', '', 12);
-        $pdf->Text(10, 10, 'Nazwa: ' . $cave->getName());
-        $pdf->Text(10, 20, 'Inne nazwy : ' . $cave->getOtherNames());
-        // $pdf->Text(10,20,' : ' . $cave->getInventoryNumber());
-        // $pdf->Text(10,30,' : ' . $cave->getRegion());
-        // $pdf->Text(10,40,' : ' . $cave->getCoordinatesWgs84());
-        // $pdf->Text(10,50,' : ' . $cave->getCommunity());
-        // $pdf->Text(10,60,' : ' . $cave->getCounty());
-        // $pdf->Text(10,70,' : ' . $cave->getVoivodeship());
-        // $pdf->Text(10,80,' : ' . $cave->getOwner());
-        // $pdf->Text(10,90,' : ' . $cave->getBasisOfProtection());
-        // $pdf->Text(10,100,' : ' . $cave->getHoleExposure());
-        // $pdf->Text(10,110,' : ' . $cave->getOtherHoles());
-        // $pdf->Text(10,120,' : ' . $cave->getAbsoluteHeight());
-        // $pdf->Text(10,130,' : ' . $cave->getRelativeHeight());
-        // $pdf->Text(10,140,' : ' . $cave->getDepth());
-        // $pdf->Text(10,150,' : ' . $cave->getExceeds());
-        // $pdf->Text(10,160,' : ' . $cave->getDrop());
-        // $pdf->Text(10,170,' : ' . $cave->getLength());
-        // $pdf->Text(10,180,' : ' . $cave->getHorizontalExtension());
-        // $pdf->Text(10,190,' : ' . $cave->getGeographicalLocation());
-        // $pdf->Text(10,200,' : ' . $cave->getDescriptionOfAccess());
-        // $pdf->Text(10,210,' : ' . $cave->getDescription());
-        // $pdf->Text(10,220,' : ' . $cave->getResearch_history());
-        // $pdf->Text(10,230,' : ' . $cave->getDocumentationHistory());
-        // $pdf->Text(10,240,' : ' . $cave->getStatus());
-        // $pdf->Text(10,250,' : ' . $cave->getLiterature());
-        // $pdf->Text(10,260,' : ' . $cave->getStudyAuthors());
-        // $pdf->Text(10,270,' : ' . $cave->getEditorial());
-        // $pdf->Text(10,280,' : ' . $cave->getConditionByYear());
-        // $pdf->Text(10,290,' : ' . $cave->getLinkCbdg());
-        // $pdf->Text(10,300,' : ' . $cave->getCBDGNumber());
-        $content = $pdf->Output('caves/' . $this->camelCase($cave->getName()) . '.pdf', 'F');
+        $pdf = new Pdf($cave);
+        return $pdf->create();
     }
 
     public function getName($value)
