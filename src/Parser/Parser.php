@@ -121,6 +121,7 @@ class Parser
     public function saveCave($cave)
     {
         $pdf = new Pdf($cave);
+
         return $pdf->create();
     }
 

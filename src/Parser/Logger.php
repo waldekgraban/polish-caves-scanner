@@ -35,7 +35,7 @@ class Logger
 
     public function getLogContent(): string
     {
-        if($this->case != true){
+        if ($this->case != true) {
             return $this->getTime() . " : http://jaskiniepolski.pgi.gov.pl/Details/Information/" . $this->number . ' - not found!';
         } else {
             return $this->getTime() . " : http://jaskiniepolski.pgi.gov.pl/Details/Information/" . $this->number . ' - success!';
