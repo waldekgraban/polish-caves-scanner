@@ -1,8 +1,12 @@
 <?php
+/*
+ *
+ * Created by Waldemar Graban 2020
+ *
+ */
 
 namespace Waldekgraban\Scanner\Parser;
 
-// use Fpdf\Fpdf;
 use Waldekgraban\Scanner\Parser\Cave;
 
 class PdfGenerator
@@ -30,10 +34,10 @@ class PdfGenerator
     {
         $pdf = new \tFPDF();
         $pdf->AddPage();
-        $pdf->SetAuthor('https://github.com/waldekgraban/');
+        $pdf->SetAuthor('baza.pgi.gov.pl by https://github.com/waldekgraban/');
         $pdf->SetTitle(trim($this->cave->getName()));
-        $pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
-        $pdf->SetFont('DejaVu','',8);
+        $pdf->AddFont('DejaVu', '', 'DejaVuSansCondensed.ttf', true);
+        $pdf->SetFont('DejaVu', '', 8);
 
         $pdf->Cell(80, 7, 'Nazwa', 0);
         $pdf->Cell(80, 7, trim($this->cave->getName(), 0));
