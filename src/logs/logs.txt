@@ -1,5 +1,0 @@
-
-2020-01-13 11:14:00 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1330
-2020-01-13 11:14:23 : http://jaskiniepolski.pgi.gov.pl/Details/Information/20
-2020-01-13 11:18:16 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1330 success!
-2020-01-13 11:18:27 : http://jaskiniepolski.pgi.gov.pl/Details/Information/20 not found!
