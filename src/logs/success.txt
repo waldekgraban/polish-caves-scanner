@@ -134,3 +134,7 @@ http://jaskiniepolski.pgi.gov.pl/Details/Information/<b>1320</b><br>
 2020-01-13 10:59:28 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1320
 2020-01-13 11:00:19 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1320
 2020-01-13 11:02:33 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1320
+2020-01-13 11:07:49 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1320
+2020-01-13 11:09:50 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1330
+2020-01-13 11:14:00 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1330
+2020-01-13 11:18:16 : http://jaskiniepolski.pgi.gov.pl/Details/Information/1330 success!

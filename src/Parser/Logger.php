@@ -35,7 +35,11 @@ class Logger
 
     public function getLogContent(): string
     {
-        return $this->getTime() . " : http://jaskiniepolski.pgi.gov.pl/Details/Information/" . $this->number;
+        if($this->case != true){
+            return $this->getTime() . " : http://jaskiniepolski.pgi.gov.pl/Details/Information/" . $this->number . ' - not found!';
+        } else {
+            return $this->getTime() . " : http://jaskiniepolski.pgi.gov.pl/Details/Information/" . $this->number . ' - success!';
+        }
     }
 
     public function save()
@@ -46,5 +50,9 @@ class Logger
         $file = fopen($logFile, "a") or die("Unable to open file!");
         fwrite($file, "\n" . $content);
         fclose($file);
+
+        $fullLogFile = fopen("logs/logs.txt", "a") or die("Unable to open file!");
+        fwrite($fullLogFile, "\n" . $content);
+        fclose($fullLogFile);
     }
 }
