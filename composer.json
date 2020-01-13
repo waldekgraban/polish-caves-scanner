@@ -10,7 +10,8 @@
         "php": "^7.2",
         "guzzlehttp/guzzle": "^6.5",
         "components/jquery": "^3.4",
-        "fpdf/fpdf": "^1.81"
+        "fpdf/fpdf": "^1.81",
+        "setasign/tfpdf": "1.25"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12.2",
