@@ -12,18 +12,8 @@ Aktualnie Skaner wymaga
 
  - PHP 7 + (mbstring)
  - Composer
- - Rozszerzenia czasu egzekucji skryptu.
 
-		Otwórz php.ini np.:
-		$ sudo nano /etc/php/7.2/cli/php.ini
-		
-		i zmodyfkuj poniższe wartości:
-		
-		ini_set('max_execution_time', 1800); //1800 sekund = 30 minut
-		
-		set_time_limit(1800);
-		
-	Ogromna ilość danych wymaga długiego czasu skanowania...
+    Skanowanie powinno trwać maksymalnie 15 min. i zwrócić ponad 3000 plików pdf.
 	
 ## Instalacja:
 
