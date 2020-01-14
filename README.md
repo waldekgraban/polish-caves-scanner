@@ -32,6 +32,12 @@ Aby uruchomić skaner w głównym katalogu startujemy server na dowolnym porcie 
     php -S localhost:8001
 I uruchamiamy program np. w przeglądarce inernetowej (adres: localhost:8001)
 
+Można również wykonać to polecenie:
+
+    $ cd /src
+    $ php index.php
+
+
 W trakcie skanowania w katalogu **/src/caves** zaczną się pojawiać pliki pdf ze znalezionymi jaskiniami.
 
 Możesz również ręcznie ustawić zakres skanowanych adresów CBDG.
