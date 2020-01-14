@@ -45,11 +45,8 @@ class Parser
 
         $cave = $this->createOrFailCave($values);
 
-        if (!is_object($cave)) {
-            return $this->errorMsg($this->number);
-        } else {
+        if (is_object($cave)) {
             return $this->saveCave($cave);
-            // return $this->showCave($cave);
         }
     }
 
@@ -114,13 +111,6 @@ class Parser
     public function errorMsg($number)
     {
         echo "Object number " . $number . " in CBDG not found <br>";
-    }
-
-    public function showCave($cave)
-    {
-        echo "<pre>";
-        print_r($cave);
-        echo "</pre>";
     }
 
     public function saveCave($cave)
