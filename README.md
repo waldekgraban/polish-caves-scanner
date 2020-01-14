@@ -21,7 +21,7 @@ Aktualnie Skaner wymaga
 		
 		ini_set('max_execution_time', 1800); //1800 sekund = 30 minut
 		
-		set_time_limit(300);
+		set_time_limit(1800);
 		
 	Ogromna ilość danych wymaga długiego czasu skanowania...
 	
@@ -42,7 +42,7 @@ Wchodzimy w pobrany folder i instalujemy zależności:
 Aby uruchomić skaner w głównym katalogu startujemy server na dowolnym porcie np.:
 
     php -S localhost:8001
-I uruchomić w np. przeglądarce inernetowej ten adres (localhost:8001)
+I uruchamiamy program np. w przeglądarce inernetowej (adres: localhost:8001)
 
 W trakcie skanowania w katalogu **/src/caves** zaczną się pojawiać pliki pdf ze znalezionymi jaskiniami.
 
