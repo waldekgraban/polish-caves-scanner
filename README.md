@@ -13,8 +13,6 @@ Aktualnie Skaner wymaga
  - PHP 7 + (mbstring)
  - Composer
 
-    Skanowanie powinno trwać maksymalnie 15 min. i zwrócić ponad 3000 plików pdf.
-	
 ## Instalacja:
 
 Pobieramy repozytorium za pomocą git'a:
@@ -42,7 +40,8 @@ W pliku **/src/index.php** znajdują się dwie zmienne:
     $minNumber = 390;	//minimalny numer strony (niżej nic nie ma)
     $maxNumber = 9999;  	//maksymalny numer strony.
 
-Modyfikacja tych zmiennych zapewnia możliwość skanowania wybranego  przez Ciebie obszaru CBDG.
+W takim zakresie skanowanie nie powinno trwać dłużej niż 15 min.
+Modyfikacja tych zmiennych zapewnia możliwość skanowania wybranego przez Ciebie obszaru CBDG.
 
 
 ## Logowanie skanowania
