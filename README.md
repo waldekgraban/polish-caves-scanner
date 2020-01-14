@@ -40,7 +40,8 @@ W pliku **/src/index.php** znajdują się dwie zmienne:
     $minNumber = 390;	//minimalny numer strony (niżej nic nie ma)
     $maxNumber = 9999;  	//maksymalny numer strony.
 
-W takim zakresie skanowanie nie powinno trwać dłużej niż 15 min.
+W takim zakresie skanowanie powinno trwać krócej niż 15 min i zwrócić ponad 3000 plików pdf.
+
 Modyfikacja tych zmiennych zapewnia możliwość skanowania wybranego przez Ciebie obszaru CBDG.
 
 
