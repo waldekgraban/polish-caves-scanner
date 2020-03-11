@@ -21,12 +21,25 @@ class LoggerTest extends TestCase
         $this->assertInstanceOf(Logger::class, $this->logger);
     }
 
-    // public function testSetName()
-    // {
-    //     $data = " new name";
-    //     $this->cave->setName($data);
-    //     $this->assertSame($this->cave->getName($data), trim($data));
-    // }
+    public function testGetNumber()
+    {
+        $this->assertIsInt($this->logger->getNumber());
+    }
+
+    public function testGetCase()
+    {
+        $this->assertIsBool($this->logger->getCase());
+    }
+
+    public function testGetFile()
+    {
+        $this->assertIsString($this->logger->getFile());
+    }
+
+    public function testGetLogContent()
+    {
+        $this->assertIsString($this->logger->getLogContent());
+    }
 
     protected function tearDown(): void
     {
