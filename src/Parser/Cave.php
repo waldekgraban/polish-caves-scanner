@@ -267,7 +267,7 @@ class Cave
         return $this;
     }
 
-    public function setResearch_history($research_history)
+    public function setResearchHistory($research_history)
     {
         $this->research_history = trim($research_history);
 
@@ -455,7 +455,7 @@ class Cave
         return $this->description;
     }
 
-    public function getResearch_history()
+    public function getResearchHistory()
     {
         return $this->research_history;
     }
