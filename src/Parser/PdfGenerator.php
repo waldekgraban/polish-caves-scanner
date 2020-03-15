@@ -34,7 +34,7 @@ class PdfGenerator
     {
         $pdf = new \tFPDF();
         $pdf->AddPage();
-        $pdf->SetAuthor('baza.pgi.gov.pl by https://github.com/waldekgraban/');
+        $pdf->SetAuthor('https://github.com/waldekgraban/, content: baza.pgi.gov.pl');
         $pdf->SetTitle(trim($this->cave->getName()));
         $pdf->AddFont('DejaVu', '', 'DejaVuSansCondensed.ttf', true);
         $pdf->SetFont('DejaVu', '', 8);
