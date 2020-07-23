@@ -53,7 +53,7 @@ Modyfikacja tych zmiennych zapewnia możliwość skanowania wybranego przez Cieb
 
 ## Logowanie skanowania
 W trakcie skanowania warto podglądać co aktualnie dzieje się w aplikacji.
-Tymczasowo służą do tego logi. Otwórzmy terminal i wpiszmy:
+Tymczasowo służą do tego logi. Otwórzmy terminal i wpiszmy jedno z poniższych poleceń.
 
 Wszystkie logi:
 	
